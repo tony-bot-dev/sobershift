@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoberShift — Workplace Wellness for the Alcohol-Free Generation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --brand-dark: #0c0c0c;
+      --brand-light: #faf9f7;
+      --accent: #c9a227;
+      --accent-hover: #b8911f;
+      --muted: #6b6b6b;
+    }
+    
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--brand-light);
+      color: var(--brand-dark);
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .serif-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    
+    /* Mesh gradient background */
+    .mesh-bg {
+      background: 
+        radial-gradient(ellipse at 20% 20%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(201, 162, 39, 0.05) 0%, transparent 50%),
+        linear-gradient(180deg, var(--brand-light) 0%, #f5f3ef 100%);
+    }
+    
+    /* Glassmorphism */
+    .glass {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    /* Subtle reveal animation */
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(24px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+    
+    .animate-reveal {
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+    }
+    
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    
+    /* Premium button */
+    .btn-primary {
+      background: var(--brand-dark);
+      color: white;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.25s ease;
+      display: inline-block;
+    }
+    
+    .btn-primary:hover {
+      background: #2a2a2a;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--brand-dark);
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-weight: 500;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      transition: all 0.25s ease;
+      display: inline-block;
+    }
+    
+    .btn-secondary:hover {
+      border-color: var(--brand-dark);
+      background: rgba(0, 0, 0, 0.03);
+    }
+    
+    /* Card hover */
+    .feature-card {
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
+    }
+    
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="mesh-bg min-h-screen">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 glass">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="text-2xl serif-heading tracking-tight">SoberShift.</div>
+      <div class="hidden md:flex items-center space-x-10 text-sm font-medium text-gray-500">
+        <a href="#problem" class="hover:text-black transition-colors">Why It Matters</a>
+        <a href="#features" class="hover:text-black transition-colors">Features</a>
+        <a href="#pricing" class="hover:text-black transition-colors">Pricing</a>
+        <a href="#contact" class="btn-primary text-sm py-3 px-6">Request Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <main class="pt-40 pb-24">
+    <section class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-12 gap-8 items-center">
+        <div class="col-span-12 lg:col-span-6">
+          <div class="animate-reveal">
+            <span class="text-accent font-semibold text-xs uppercase tracking-[0.2em] mb-6 block">Workplace Wellness, Reimagined</span>
+            <h1 class="serif-heading text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-8">
+              The alcohol-free<br>
+              <em>workplace</em> platform.
+            </h1>
+            <p class="text-lg text-gray-500 max-w-md leading-relaxed mb-10">
+              49% of Americans plan to drink less in 2025. Meet your employees where they are — with a wellness platform designed for the sober-curious generation.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="#contact" class="btn-primary text-center">Start Your Trial</a>
+              <a href="#features" class="btn-secondary text-center">See How It Works</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Stats / Social Proof -->
+        <div class="col-span-12 lg:col-span-5 lg:col-start-8 mt-16 lg:mt-0">
+          <div class="animate-reveal delay-200">
+            <div class="glass rounded-2xl p-8 premium-shadow">
+              <div class="grid grid-cols-2 gap-8">
+                <div class="text-center">
+                  <div class="serif-heading text-4xl text-accent mb-2">49%</div>
+                  <div class="text-sm text-gray-500">planning to drink less<br>(2025 survey)</div>
+                </div>
+                <div class="text-center">
+                  <div class="serif-heading text-4xl text-accent mb-2">36%</div>
+                  <div class="text-sm text-gray-500">Dry January<br>growth YoY</div>
+                </div>
+                <div class="text-center">
+                  <div class="serif-heading text-4xl text-accent mb-2">$56B</div>
+                  <div class="text-sm text-gray-500">workplace wellness<br>market size</div>
+                </div>
+                <div class="text-center">
+                  <div class="serif-heading text-4xl text-accent mb-2">72%</div>
+                  <div class="text-sm text-gray-500">companies reporting<br>reduced costs</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="py-32 mt-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-12 gap-8">
+          <div class="col-span-12 lg:col-span-5">
+            <span class="text-accent font-semibold text-xs uppercase tracking-[0.2em] mb-4 block">The Problem</span>
+            <h2 class="serif-heading text-4xl md:text-5xl leading-[1.15] mb-6">
+              Your wellness program is missing half the picture.
+            </h2>
+          </div>
+          <div class="col-span-12 lg:col-span-6 lg:col-start-7">
+            <p class="text-lg text-gray-500 leading-relaxed mb-8">
+              Traditional workplace wellness focuses on fitness, nutrition, and mental health — but ignores one of the most impactful areas of employee wellbeing: relationship with alcohol.
+            </p>
+            <p class="text-lg text-gray-500 leading-relaxed mb-8">
+              Alcohol-related workplace issues cost employers billions annually in absenteeism, reduced productivity, health claims, and turnover. Yet most companies have <em>nothing</em> to address it — leaving employees to navigate sobriety alone.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-center text-gray-600">
+                <span class="w-2 h-2 bg-accent rounded-full mr-4"></span>
+                No dedicated B2B platform for alcohol-free wellness
+              </li>
+              <li class="flex items-center text-gray-600">
+                <span class="w-2 h-2 bg-accent rounded-full mr-4"></span>
+                EAPs focus on crisis, not proactive support
+              </li>
+              <li class="flex items-center text-gray-600">
+                <span class="w-2 h-2 bg-accent rounded-full mr-4"></span>
+                Missing community and accountability structures
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-32 bg-white/50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-20">
+          <span class="text-accent font-semibold text-xs uppercase tracking-[0.2em] mb-4 block">What You Get</span>
+          <h2 class="serif-heading text-4xl md:text-5xl">
+            Everything HR needs to support<br>
+            <em>alcohol-free</em> employees.
+          </h2>
+        </div>
+        
+        <div class="grid grid-cols-12 gap-8">
+          <!-- Feature 1 -->
+          <div class="col-span-12 md:col-span-6 lg:col-span-4">
+            <div class="feature-card glass rounded-2xl p-8 h-full">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h3 class="serif-heading text-2xl mb-3">Sobriety Challenges</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">
+                30-day challenges, dry streaks, and gamified milestones that keep employees engaged without feeling judgmental.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Feature 2 -->
+          <div class="col-span-12 md:col-span-6 lg:col-span-4">
+            <div class="feature-card glass rounded-2xl p-8 h-full">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+              </div>
+              <h3 class="serif-heading text-2xl mb-3">Peer Community</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">
+                Anonymous forums, cohort groups, and virtual events where employees connect over shared goals — no pressure, no shame.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Feature 3 -->
+          <div class="col-span-12 md:col-span-6 lg:col-span-4">
+            <div class="feature-card glass rounded-2xl p-8 h-full">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                </svg>
+              </div>
+              <h3 class="serif-heading text-2xl mb-3">Coaching & Resources</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">
+                On-demand coaching, educational content, and evidence-based tools for moderation, abstinence, or simply exploring a alcohol-free lifestyle.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Feature 4 -->
+          <div class="col-span-12 md:col-span-6 lg:col-span-4">
+            <div class="feature-card glass rounded-2xl p-8 h-full">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+              </div>
+              <h3 class="serif-heading text-2xl mb-3">HR Analytics</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">
+                Dashboard showing participation rates, engagement metrics, and ROI indicators — demonstrate value to leadership.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Feature 5 -->
+          <div class="col-span-12 md:col-span-6 lg:col-span-4">
+            <div class="feature-card glass rounded-2xl p-8 h-full">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                </svg>
+              </div>
+              <h3 class="serif-heading text-2xl mb-3">Private & Compliant</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">
+                HIPAA-compliant, anonymous by default. Employees control their data — HR sees aggregate metrics only.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Feature 6 -->
+          <div class="col-span-12 md:col-span-6 lg:col-span-4">
+            <div class="feature-card glass rounded-2xl p-8 h-full">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
+                </svg>
+              </div>
+              <h3 class="serif-heading text-2xl mb-3">Manager Training</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">
+                Equip leaders to support team members navigating sobriety — without awkwardness or legal exposure.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-24">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <blockquote class="serif-heading text-2xl md:text-3xl italic text-gray-600 leading-relaxed mb-8">
+          "We didn't have anything to support employees who wanted to cut back or quit drinking. SoberShift filled a gap we didn't even know we had."
+        </blockquote>
+        <div class="text-sm text-gray-500">
+          — Sarah Mitchell, VP of People Operations<br>
+          <span class="text-gray-400">Tech company, 450 employees</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-32 bg-white/50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-20">
+          <span class="text-accent font-semibold text-xs uppercase tracking-[0.2em] mb-4 block">Pricing</span>
+          <h2 class="serif-heading text-4xl md:text-5xl mb-6">
+            Simple, transparent pricing.
+          </h2>
+          <p class="text-gray-500 max-w-lg mx-auto">
+            Flexible plans that scale with your organization. All plans include a 14-day free trial.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-12 gap-8 max-w-5xl mx-auto">
+          <!-- Starter -->
+          <div class="col-span-12 md:col-span-4">
+            <div class="glass rounded-2xl p-8 h-full">
+              <h3 class="serif-heading text-2xl mb-2">Starter</h3>
+              <div class="text-4xl font-semibold mb-1">$199</div>
+              <div class="text-sm text-gray-500 mb-6">per employee / year</div>
+              <ul class="space-y-3 text-sm text-gray-600 mb-8">
+                <li>• Digital platform access</li>
+                <li>• Self-guided challenges</li>
+                <li>• Anonymous community forums</li>
+                <li>• Resource library</li>
+                <li>• Basic analytics</li>
+              </ul>
+              <a href="#contact" class="btn-secondary w-full text-center block">Get Started</a>
+            </div>
+          </div>
+          
+          <!-- Professional (Featured) -->
+          <div class="col-span-12 md:col-span-4">
+            <div class="glass rounded-2xl p-8 h-full border-2 border-accent relative">
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full">Most Popular</div>
+              <h3 class="serif-heading text-2xl mb-2">Professional</h3>
+              <div class="text-4xl font-semibold mb-1">$399</div>
+              <div class="text-sm text-gray-500 mb-6">per employee / year</div>
+              <ul class="space-y-3 text-sm text-gray-600 mb-8">
+                <li>• Everything in Starter</li>
+                <li>• Live cohort groups</li>
+                <li>• 1:1 coaching sessions</li>
+                <li>• Manager training workshops</li>
+                <li>• Advanced analytics</li>
+                <li>• API integrations</li>
+              </ul>
+              <a href="#contact" class="btn-primary w-full text-center block">Get Started</a>
+            </div>
+          </div>
+          
+          <!-- Enterprise -->
+          <div class="col-span-12 md:col-span-4">
+            <div class="glass rounded-2xl p-8 h-full">
+              <h3 class="serif-heading text-2xl mb-2">Enterprise</h3>
+              <div class="text-4xl font-semibold mb-1">Custom</div>
+              <div class="text-sm text-gray-500 mb-6">contact for pricing</div>
+              <ul class="space-y-3 text-sm text-gray-600 mb-8">
+                <li>• Everything in Professional</li>
+                <li>• Dedicated success manager</li>
+                <li>• Custom branding</li>
+                <li>• White-glove rollout</li>
+                <li>• SLA guarantees</li>
+                <li>• Unlimited coaching</li>
+              </ul>
+              <a href="#contact" class="btn-secondary w-full text-center block">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-32">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <span class="text-accent font-semibold text-xs uppercase tracking-[0.2em] mb-6 block">Ready to Get Started?</span>
+        <h2 class="serif-heading text-4xl md:text-5xl mb-8">
+          Help your employees thrive —<br>
+          <em>whatever their relationship</em> with alcohol.
+        </h2>
+        <p class="text-gray-500 text-lg mb-10">
+          Join the forward-thinking companies already supporting their workforce with SoberShift.
+        </p>
+        <form class="glass rounded-2xl p-8 text-left max-w-xl mx-auto">
+          <div class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Work Email</label>
+              <input type="email" placeholder="you@company.com" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Company Size</label>
+              <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors">
+                <option>1-50 employees</option>
+                <option>51-200 employees</option>
+                <option>201-500 employees</option>
+                <option>500+ employees</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Anything else?</label>
+              <textarea rows="3" placeholder="Tell us about your needs..." class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full">Request Demo</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white/30 py-12 border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-xl serif-heading mb-4 md:mb-0">SoberShift.</div>
+        <div class="text-sm text-gray-500">
+          © 2026 SoberShift. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
